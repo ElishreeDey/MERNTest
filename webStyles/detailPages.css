@@ -66,12 +66,13 @@ select {
   font: Arial;
   font-size: 12px;
 }
-table, td, th {
+table, th, td {
   border: 1px solid black;
+  border-collapse: collapse;
+  padding: 8px;
+  font: Arial;
+  font-size: 12px;
 }
-
-
-
 th {
-  text-align: left;
+  text-align: center;
 }

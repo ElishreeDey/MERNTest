@@ -14,12 +14,9 @@
                         <label for="fname">First name: <span id="mandatoryName" class="mandatory">*</span> </label><br>
                         <input type="text" id="userName" placeholder="Name" required> <br>
                         <label for="email">Email: <span id="mandatoryEmail" class="mandatory">*</span></label><br>
-                        <input type="email" id="email" placeholder="Email" required><br>
-                        <label for="password">Password: <span id="mandatoryPassword" class="mandatory">*</span></label><br>
-                        <input type="password" id="password" placeholder="Password" required><br>
-
-                        <!--<input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>-->
-                        
+                        <input type="email" id="email" placeholder="Email" required onchange="validateEmail(this.value)"><br>
+                        <label for="phone">Phone: <span id="mandatoryPhone" class="mandatory">*</span></label><br>
+                        <input type="text" id="phone" placeholder="Phone" required><br>
                         <label for="gender">Gender:</label><br>
                         <select id="gender">  
                             <option id="" value="">Select Gender</option>  
@@ -39,35 +36,13 @@
                         <tr>
                             <td class="storedDataColHeader">Name</td>
                             <td class="storedDataColHeader">Email</td>
-                            <td class="storedDataColHeader">Password</td>
+                            <td class="storedDataColHeader">Phone</td>
                             <td class="storedDataColHeader">Gender</td>
-                            <td class="storedDataColHeader">Edit</td>
-                            <td class="storedDataColHeader">Delete</td>
+                            <td class="storedDataColHeader" colspan="2">Action</td>
                         </tr>
-                        <!--<tr id="viewData">
-                            <td><p id="displayName"></p></td>
-                            <td><p id="displayEmail"></p></td>
-                            <td><p id="displayPassword"></p></td>
-                            <td><p id="displayGender"></p></td>                            
-                        </tr>-->
                     </table>
                 </td>
             </tr>
         </table>
-    <!--<h1>Registration Form </h1><br>
-    <div id="registrationForm">
-        <label for="fname">First name:</label><br>
-        <input type="text" id="userName" placeholder="Name" required> <br>
-        <label for="email">Email:</label><br>
-        <input type="email" id="email" placeholder="Email" required><br>
-        <label for="password">Password:</label><br>
-        <input type="password" id="password" placeholder="Password" required><br>
-
-        
-        <label for="gender">Gender:</label>
-        <input type="radio" id="gender" name="genderMale" value="male" > Male
-        <input type="radio" id="genderFemale" name="genderFemale" value="female" > Female<br>
-        <input type="submit" value="Submit">
-    </div>-->
     </body>
 </html>

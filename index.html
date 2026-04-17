@@ -1,69 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
+    <title>Assignment One</title>
     <head>
         <script type="text/javascript" src="/js/detailPage.js"></script>
         <link rel="stylesheet" href="/webStyles/detailPages.css">
     </head>
-<body> 
-    <table>
-        <tr>
-            <td>
-                <h1>Registration Form </h1><br>
-                <div id="registrationForm">
-                    <label for="fname">First name:</label><br>
-                    <input type="text" id="userName" placeholder="Name" required> <br>
-                    <label for="email">Email:</label><br>
-                    <input type="email" id="email" placeholder="Email" required><br>
-                    <label for="password">Password:</label><br>
-                    <input type="password" id="password" placeholder="Password" required><br>
+    <body> 
+        <table>
+            <tr>
+                <td>
+                    <h1>Registration</h1><br>
+                    <div id="registrationForm">
+                        <label for="fname">First name: <span id="mandatoryName" class="mandatory">*</span> </label><br>
+                        <input type="text" id="userName" placeholder="Name" required> <br>
+                        <label for="email">Email: <span id="mandatoryEmail" class="mandatory">*</span></label><br>
+                        <input type="email" id="email" placeholder="Email" required><br>
+                        <label for="password">Password: <span id="mandatoryPassword" class="mandatory">*</span></label><br>
+                        <input type="password" id="password" placeholder="Password" required><br>
 
-                    <!--<input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>-->
-                    
-                    <label for="gender">Gender:</label><br>
-  <select>  
-    <option id="" value="">Select Gender</option>  
-    <option id="maleOption" value="male">Male</option>
-    <option value="female">Female</option>
-  </select>
+                        <!--<input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>-->
+                        
+                        <label for="gender">Gender:</label><br>
+                        <select id="gender">  
+                            <option id="" value="">Select Gender</option>  
+                            <option id="maleOption" value="male">Male</option>
+                            <option id="femaleOption" value="female">Female</option>
+                        </select>
 
 
 
-                    <!--<input type="radio" id="gender" name="genderMale" value="male" > Male
-                    <input type="radio" id="genderFemale" name="genderFemale" value="female" > Female -->
-                    
-                    <br>
-                    <!--<input type="submit" value="Submit">-->
-                    <button onclick="saveData()">Submit</button>
+                        <!--<input type="radio" id="gender" name="genderMale" value="male" > Male
+                        <input type="radio" id="genderFemale" name="genderFemale" value="female" > Female -->
+                        
+                        <br>
+                        <!--<input type="submit" value="Submit">-->
+                        <button onclick="saveData()">Submit</button>
 
-                </div>
+                    </div>
 
-            </td>
-            <td>
-                <table>
-                    <tr>
-                    <td><p id="displayName"></p></td>
-                    <td><p id="displayEmail"></p></td>
-                    <td><p id="displayPassword"></p></td>
-                    </tr>
-                </table>
-            </td>
-        </tr>
-    </table>
-<!--<h1>Registration Form </h1><br>
-<div id="registrationForm">
-    <label for="fname">First name:</label><br>
-    <input type="text" id="userName" placeholder="Name" required> <br>
-    <label for="email">Email:</label><br>
-    <input type="email" id="email" placeholder="Email" required><br>
-    <label for="password">Password:</label><br>
-    <input type="password" id="password" placeholder="Password" required><br>
+                </td>
+                <td>
+                    <table id="viewData">                        
+                        <h1>View Registred Data </h1><br>
+                        <tr>
+                            <td class="storedDataColHeader">Name</td>
+                            <td class="storedDataColHeader">Email</td>
+                            <td class="storedDataColHeader">Password</td>
+                            <td class="storedDataColHeader">Gender</td>
+                        </tr>
+                        <!--<tr id="viewData">
+                            <td><p id="displayName"></p></td>
+                            <td><p id="displayEmail"></p></td>
+                            <td><p id="displayPassword"></p></td>
+                            <td><p id="displayGender"></p></td>                            
+                        </tr>-->
+                    </table>
+                </td>
+            </tr>
+        </table>
+    <!--<h1>Registration Form </h1><br>
+    <div id="registrationForm">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="userName" placeholder="Name" required> <br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" placeholder="Email" required><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" placeholder="Password" required><br>
 
-    
-    <label for="gender">Gender:</label>
-    <input type="radio" id="gender" name="genderMale" value="male" > Male
-    <input type="radio" id="genderFemale" name="genderFemale" value="female" > Female<br>
-    <input type="submit" value="Submit">
-</div>-->
-</body>
+        
+        <label for="gender">Gender:</label>
+        <input type="radio" id="gender" name="genderMale" value="male" > Male
+        <input type="radio" id="genderFemale" name="genderFemale" value="female" > Female<br>
+        <input type="submit" value="Submit">
+    </div>-->
+    </body>
 </html>

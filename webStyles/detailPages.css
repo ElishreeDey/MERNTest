@@ -54,5 +54,24 @@ select {
   font: Arial;
   font-size: 12px;
 }    
+.mandatory {
+  color: red;
+  /*display:none*/
+}
+
+.storedDataColHeader {
+  text-align: center;
+  color: green;
+  padding: 8px;
+  font: Arial;
+  font-size: 12px;
+}
+table, td, th {
+  border: 1px solid black;
+}
 
 
+
+th {
+  text-align: left;
+}

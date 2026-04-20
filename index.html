@@ -4,33 +4,31 @@
     <head>
         <script type="text/javascript" src="/js/detailPage.js"></script>
         <link rel="stylesheet" href="/webStyles/detailPages.css">
+        
     </head>
     <body> 
-        <table>
+        <table class="NoBorder">
             <tr>
-                <td>
+                <td class="NoBorder">
                     <h1>Registration</h1><br>
                     <div id="registrationForm">
-                        <label for="fname">First name: <span id="mandatoryName" class="mandatory">*</span> </label><br>
-                        <input type="text" id="userName" placeholder="Name" required> <br>
-                        <label for="email">Email: <span id="mandatoryEmail" class="mandatory">*</span></label><br>
-                        <input type="email" id="email" placeholder="Email" required onchange="validateEmail(this.value)"><br>
-                        <label for="phone">Phone: <span id="mandatoryPhone" class="mandatory">*</span></label><br>
-                        <input type="text" id="phone" placeholder="Phone" required><br>
+                        <label for="fname"><span>First name: </span><span id="mandatoryName" class="mandatory">*</span> </label><br>
+                        <input type="text" id="userName" required onchange="checkNotIsEmpty(this.value)"> <br>
+                        <label for="email"><span>Email: <span><span id="mandatoryEmail" class="mandatory">*</span></label><br>
+                        <input type="email" id="email" required onchange="validateEmail(this.value)"><br>
+                        <label for="phone"><span>Phone: </span><span id="mandatoryPhone" class="mandatory">*</span></label><br>
+                        <input type="text" id="phone" required onchange="validateFlexiblePhone(this.value)"><br>
                         <label for="gender">Gender:</label><br>
                         <select id="gender">  
                             <option id="" value="">Select Gender</option>  
-                            <option id="maleOption" value="male">Male</option>
-                            <option id="femaleOption" value="female">Female</option>
+                            <option id="maleOption" value="male">male</option>
+                            <option id="femaleOption" value="female">female</option>
                         </select>
                         <br>
-                        <!--<input type="submit" value="Submit">-->
                         <button onclick="saveData()">Submit</button>
-
                     </div>
-
                 </td>
-                <td>
+                <td id="viewDataTD" class="alignTop">
                     <table id="viewData">                        
                         <h1>View Registred Data </h1><br>
                         <tr>
@@ -41,6 +39,7 @@
                             <td class="storedDataColHeader" colspan="2">Action</td>
                         </tr>
                     </table>
+                    <span id="editTableRowNo" class="invisibleSpan"></span>
                 </td>
             </tr>
         </table>

@@ -56,6 +56,7 @@ select {
 }    
 .mandatory {
   color: red;
+  float: right;
   /*display:none*/
 }
 
@@ -75,4 +76,17 @@ table, th, td {
 }
 th {
   text-align: center;
+}
+.NoBorder{
+  border: 0px none;
+  border-collapse: collapse;
+  padding: 8px;
+  font: Arial;
+  font-size: 12px;
+}
+.alignTop{
+  vertical-align: top;
+}
+.invisibleSpan {
+  display: none;
 }

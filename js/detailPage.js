@@ -11,7 +11,7 @@ function saveData(){
         document.getElementById("mandatoryPhone").style.display= 'inline';
         err = "Please fill details in all required fields";
     }
-    else if (name == "") {
+    else if (name == "" || name.trim() === "") {
         document.getElementById("mandatoryName").style.display= 'inline';
         err = "Name is required!";
     }
@@ -27,19 +27,27 @@ function saveData(){
     
     if(name != "" )
     {
-        document.getElementById("mandatoryName").style.display= 'none';        
+        errValidateName = checkNotIsEmpty(name);
+        if(errValidateName != "" && errValidateName != undefined){
+            document.getElementById("mandatoryName").style.display= 'block';
+            return;// Stop form submission
+        }     
     }    
     if(email != "" )
     { 
         errValidateEmail = validateEmail(email);
         if(errValidateEmail != "" && errValidateEmail != undefined){
+            document.getElementById("mandatoryEmail").style.display= 'block';
             return;// Stop form submission
-        }
-        document.getElementById("mandatoryEmail").style.display= 'none';        
+        }      
     }    
     if(phone != "" )
-    {
-        document.getElementById("mandatoryPhone").style.display= 'none';        
+    {   
+        errValidatePhone = validateFlexiblePhone(phone); 
+        if(errValidatePhone != "" && errValidatePhone == "error in phone number"){ //alert("here" + errValidatePhone);
+            document.getElementById("mandatoryPhone").style.display= 'block'; 
+            return;// Stop form submission
+        }       
     }
 
     if(err != "" && err != undefined){
@@ -79,7 +87,7 @@ function saveData(){
     cellFive.innerHTML = "<span value='Edit' onclick='editRow(this)'>Edit</span>";
     cellSix.innerHTML = "<span value='X' onclick='deleteRow(this)'>X</span>";
 
-    // Setting colors
+    // Setting colors to edit and delete(X) buttons
     cellFive.style.color = "blue";
     cellSix.style.color = "red";
 
@@ -87,23 +95,78 @@ function saveData(){
     // clear entry fields after submission
     document.getElementById("userName").value = "";
     document.getElementById("email").value = "";
-    document.getElementById("Phone").value = "";
+    document.getElementById("phone").value = "";
     document.getElementById("gender").value = "";
+    document.getElementById("mandatoryName").style.display= 'block';
+    document.getElementById("mandatoryEmail").style.display= 'block';
+    document.getElementById("mandatoryPhone").style.display= 'block';
 
 }
 
+//This function will delete the corresponding row of the table when user clicks on delete(X) button.
 function deleteRow(r) {
   var i = r.parentNode.parentNode.rowIndex;
   document.getElementById("viewData").deleteRow(i);
 }
 
+/*function editRow(r) {//alert("edit");
+  var i = r.parentNode.parentNode.rowIndex; 
+  const rowId = r.parentNode.parentNode.id;//alert(rowId);
+  document.getElementById("editTableRowNo").innerHTML= rowId;
+  //alert(i);
+  var nameForEdit = document.getElementById("viewData").rows[i].cells[0].innerHTML;
+  var emailForEdit = document.getElementById("viewData").rows[i].cells[1].innerHTML;
+  var phoneForEdit = document.getElementById("viewData").rows[i].cells[2].innerHTML;
+  var genderForEdit = document.getElementById("viewData").rows[i].cells[3].innerHTML;
+
+  //alert(nameForEdit + " " + emailForEdit + " " + phoneForEdit + " " + genderForEdit);
+  document.getElementById("userName").value = nameForEdit;
+  document.getElementById("email").value = emailForEdit;
+  document.getElementById("phone").value = phoneForEdit;
+  document.getElementById("gender").value = genderForEdit;
+  
+}*/
+
+//This function will check if the name is empty or not. Can be used for other fields as well if needed to check NotIsEmpty.
+function checkNotIsEmpty(name) {  
+  if(name.trim() === "" || name == null) {//alert(name);
+    document.getElementById("mandatoryName").style.display= 'block';
+    document.getElementById("mandatoryName").innerHTML= '*'; 
+    return false;    
+  }else{
+    document.getElementById("mandatoryName").style.display= 'none';
+    document.getElementById("mandatoryName").innerHTML= '';    
+  }
+}
+
+//This function will check if the email is valid or not.
 function validateEmail(email) {
-  let pattern = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/; 
-  var isValid = pattern.test(email);
+  var pattern = /^[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/; 
+  var isValid = pattern.test(email);//alert(isValid);
   if(!isValid) {
-    document.getElementById("mandatoryEmail").innerHTML= 'invalid email';
-    //alert("Please enter a valid email address.");
-    return "Please enter a valid email address.";
-    ;
+    document.getElementById("mandatoryEmail").style.display= 'block';
+    document.getElementById("mandatoryEmail").innerHTML= 'invalid email address';
+    return false;    
+  }else{
+    document.getElementById("mandatoryEmail").style.display= 'none';
+    document.getElementById("mandatoryEmail").innerHTML= '';    
+  }
+}
+
+//This function will check if the phone number is valid or not.
+function validateFlexiblePhone(phone) {
+  var regex = /^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
+  var isValid = regex.test(phone); 
+  if (!isValid) {//alert("here" + isValid);
+    document.getElementById("mandatoryPhone").style.display= 'block';
+    document.getElementById("mandatoryPhone").innerHTML= 'invalid phone number';
+    return "error in phone number";
+  }else
+  {//alert(isValid);
+    document.getElementById("mandatoryPhone").style.display= 'none';
+    document.getElementById("mandatoryPhone").innerHTML= '';
+
+    const formatted = phone.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3'); // basic phone format as xxx-xxx-xxxx
+    document.getElementById("phone").value = formatted;
   }
 }

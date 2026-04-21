@@ -4,7 +4,9 @@
     <head>
         <script type="text/javascript" src="/js/detailPage.js"></script>
         <link rel="stylesheet" href="/webStyles/detailPages.css">
-        
+        <script>
+            window.onload = displayData;
+        </script>
     </head>
     <body> 
         <table class="NoBorder">
@@ -25,10 +27,11 @@
                             <option id="femaleOption" value="female">female</option>
                         </select>
                         <br>
-                        <button onclick="saveData()">Submit</button>
+                        <button id="btnAddData" onclick="saveData()">Submit</button>
+                        <button id="btnEditData" onclick="saveEditedData()" class="invisible">Save Changes</button>
                     </div>
                 </td>
-                <td id="viewDataTD" class="alignTop">
+                <td id="viewDataTD" class="displayTRegisteredData">
                     <table id="viewData">                        
                         <h1>View Registred Data </h1><br>
                         <tr>
@@ -39,7 +42,7 @@
                             <td class="storedDataColHeader" colspan="2">Action</td>
                         </tr>
                     </table>
-                    <span id="editTableRowNo" class="invisibleSpan"></span>
+                    <span id="editTableRowNo" class="invisible"></span>
                 </td>
             </tr>
         </table>

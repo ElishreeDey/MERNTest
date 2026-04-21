@@ -84,9 +84,11 @@ th {
   font: Arial;
   font-size: 12px;
 }
-.alignTop{
+.displayTRegisteredData {
   vertical-align: top;
+  border: 0px none;
+  padding-left: 120px;
 }
-.invisibleSpan {
+.invisible {
   display: none;
 }

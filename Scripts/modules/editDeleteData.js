@@ -1,4 +1,5 @@
 import { clearEntryFields } from './clearEntries.js';
+
 //This function will delete the corresponding row of the table when user clicks on delete(X) button.
 export function deleteRow(r) {
   if (confirm("Are you sure you want to delete this rec?")) {

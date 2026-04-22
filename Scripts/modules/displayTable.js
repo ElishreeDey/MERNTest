@@ -1,4 +1,5 @@
 import { createTableFromData } from './createTable.js';
+
 export function displayData(){
   //alert("on load display data");
   const allEnteredvalues = JSON.parse(localStorage.getItem("setLocalStorageJSON")) || []; // Parse string to array

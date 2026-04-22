@@ -26,27 +26,27 @@ function saveData(){
     
   if(name != "" )
   {
-    errValidateName = checkNotIsEmpty(name);
+    var errValidateName = checkNotIsEmpty(name);
     if(errValidateName != "" && errValidateName != undefined){
-      document.getElementById("mandatoryName").style.display= 'block';
+      document.getElementById("mandatoryName").style.display= '';
       return;// Stop form submission
     }     
   }  
 
   if(email != "" )
   { 
-    errValidateEmail = validateEmail(email);
+    var errValidateEmail = validateEmail(email);
     if(errValidateEmail != "" && errValidateEmail != undefined){
-      document.getElementById("mandatoryEmail").style.display= 'block';
+      document.getElementById("mandatoryEmail").style.display= '';
       return;// Stop form submission
     }      
   }  
 
   if(phone != "" )
   {   
-    errValidatePhone = validateFlexiblePhone(phone); 
+    var errValidatePhone = validateFlexiblePhone(phone); 
     if(errValidatePhone != "" && errValidatePhone == "error in phone number"){ //alert("here" + errValidatePhone);
-      document.getElementById("mandatoryPhone").style.display= 'block'; 
+      document.getElementById("mandatoryPhone").style.display= ''; 
       return;// Stop form submission
     }       
   }
@@ -157,7 +157,7 @@ function saveEditedData(){//alert("save edit");
 //This function will check if the name is empty or not. Can be used for other fields as well if needed to check NotIsEmpty.
 function checkNotIsEmpty(name) {  
   if(name.trim() === "" || name == null) {//alert(name);
-    document.getElementById("mandatoryName").style.display= 'block';
+    document.getElementById("mandatoryName").style.display= '';
     document.getElementById("mandatoryName").innerHTML= '*'; 
     return false;    
   }else{

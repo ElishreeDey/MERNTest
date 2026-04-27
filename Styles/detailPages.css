@@ -1,16 +1,29 @@
+/*
+**********************************************************************
+* Filename    : detailPages.css
+* Description : Holds all style how the registration screen look like
+* Author      : Elishree Dey Chand
+* Created     : 2026-05-24
+**********************************************************************
+*/
 
+/* Style the header */
 h1 {
   color: green;
   font: Arial bold;
   font-size: 24px;
   padding: 8px;          
 }
+
+/* Style the labels */
 label {
   color: green;
   padding: 8px;
   font: Arial;
   font-size: 12px;
 }
+
+/* Style the entry input fields */
 input {
   width: 200px;
   padding: 8px;
@@ -22,27 +35,8 @@ input {
   font: Arial;
   font-size: 12px;
 }
-/* Style the submit button */
-input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
-}
-button{
-  background-color: #04AA6D;
-  color: white;
-  width: 200px;
-  padding: 8px;
-  margin: 8px 0;
-  border: none;
-}
-button:hover {
-    background: #037e51;
-}
-body {
-      font-family: Arial;
-      background: #f2f2f2;      
-      padding: 40px;
-    }
+
+/* Style the dropdown */
 select {
   width: 200px;
   padding: 8px;
@@ -54,21 +48,37 @@ select {
   box-sizing: border-box;
   font: Arial;
   font-size: 12px;
-}    
+}   
+
+/* Style the mandatory symbol */
 .mandatory {
   color: red;
   display: inline-block;
-  margin-left: 10px;
-  padding:0px
+  margin-left: 2px;
+  padding:0px;
 }
 
-.storedDataColHeader {
-  text-align: center;
-  color: green;
+/* Style the button */
+button{
+  background-color: #04AA6D;
+  color: white;
+  width: 200px;
   padding: 8px;
-  font: Arial;
-  font-size: 12px;
+  margin: 8px 0;
+  border: none;
 }
+button:hover {
+  background: #037e51;
+}
+
+/* Style the body */
+body {
+  font-family: Arial;
+  background: #f2f2f2;      
+  padding: 40px;
+}
+
+/* Style table */
 table, th, td {
   border: 1px solid black;
   border-collapse: collapse;
@@ -86,11 +96,24 @@ th {
   font: Arial;
   font-size: 12px;
 }
-.displayTRegisteredData {
+
+/* Style StoreDataColumnHeaders */
+.storedDataColHeader {
+  text-align: center;
+  color: green;
+  padding: 8px;
+  font: Arial;
+  font-size: 12px;
+}
+
+/* Style DisplayRegisteredData area */
+.displayRegisteredData {
   vertical-align: top;
   border: 0px none;
   padding-left: 120px;
 }
+
+/* Style to make any tag invisible */
 .invisible {
   display: none;
 }

@@ -1,3 +1,15 @@
+/*
+****************************************************************************************************************************
+* Filename    : editDeleteData
+* Description : This file holds all functions to edit or delete a registered data in browser localstorage
+* Functions   : "deleteRow", "editRow", "saveEditedData"
+* Imported Functions: "clearEntryFields"
+* Author      : Elishree Dey Chand
+* Created     : 2026-05-21
+****************************************************************************************************************************
+*/
+
+//First import the required functions
 import { clearEntryFields } from './clearEntries.js';
 
 //This function will delete the corresponding row of the table when user clicks on delete(X) button.
@@ -21,6 +33,7 @@ export function deleteRow(r) {
   }
 }
 
+//This function is called when user has clicked edit button in a table row.
 export function editRow(r) {//alert("edit");
   var i = r.parentNode.parentNode.rowIndex; 
   const rowId = r.parentNode.parentNode.id;//alert(rowId);
@@ -41,6 +54,7 @@ export function editRow(r) {//alert("edit");
   document.getElementById("btnEditData").style.display= 'block';
 }
 
+//This function is called when user has clicked Save Changes to save, modified info and store it back and save in same table row.
 export function saveEditedData(){//alert("save edit");
   var rowId = document.getElementById("editTableRowNo").innerHTML; //alert(rowId);
   var i = Number(rowId.split("_")[1]); //alert(i);

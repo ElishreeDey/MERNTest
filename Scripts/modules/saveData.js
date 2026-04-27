@@ -1,7 +1,20 @@
+/*
+****************************************************************************************************************************
+* Filename    : saveData
+* Description : This file holds all functions to create and save data in browser localstorage
+* Functions   : "saveData"
+* Imported Functions: "clearEntryFields", "checkNotIsEmpty", "validateEmail", "validateFlexiblePhone", "createTableFromData"
+* Author      : Elishree Dey Chand
+* Created     : 2026-05-21
+****************************************************************************************************************************
+*/
+
+//First import the required functions
 import { clearEntryFields } from './clearEntries.js';
 import { checkNotIsEmpty, validateEmail, validateFlexiblePhone } from './validation.js';
 import { createTableFromData } from './createTable.js';
 
+//Now create the process to Save Data 
 export function saveData(){
   var name = document.getElementById("userName").value;
   var email = document.getElementById("email").value;

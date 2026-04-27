@@ -1,5 +1,18 @@
+/*
+****************************************************************************************************************************
+* Filename    : displaytable
+* Description : This file hold functions to display already saved info from browser localstorage even on page refresh data stays.
+* Functions   : "displayData"
+* Imported Functions: "createTableFromData"
+* Author      : Elishree Dey Chand
+* Created     : 2026-05-21
+****************************************************************************************************************************
+*/
+
+//First import the required functions
 import { createTableFromData } from './createTable.js';
 
+//This function will display already entered data from browser's localstorage.
 export function displayData(){
   //alert("on load display data");
   const allEnteredvalues = JSON.parse(localStorage.getItem("setLocalStorageJSON")) || []; // Parse string to array

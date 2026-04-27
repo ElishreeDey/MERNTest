@@ -1,3 +1,13 @@
+/*
+****************************************************************************************************************************
+* Filename    : clearEntries
+* Description : This file holds function to clear all entry fields after entry.
+* Functions   : "clearEntryFields"
+* Author      : Elishree Dey Chand
+* Created     : 2026-05-21
+****************************************************************************************************************************
+*/
+//This function will clear all entry fields after entry.
 export function clearEntryFields(){
   // clear entry fields after submission
   document.getElementById("userName").value = "";
